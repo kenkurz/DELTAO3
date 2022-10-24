@@ -1,7 +1,7 @@
 var mqtt = require('mqtt')
 // O3 internal MQTT broker
 var options = {
-    host: 'mqtt://192.168.2.8',
+    host: '192.168.2.8',
     port: 1883,
     protocol: 'mqtt',
     username: 'admin',
