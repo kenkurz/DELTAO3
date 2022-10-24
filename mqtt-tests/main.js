@@ -1,11 +1,11 @@
 var mqtt = require('mqtt')
-// SImple MQTT client
+// O3 internal MQTT broker
 var options = {
-    host: '5d1b27452b1843d9838bb545a295631f.s2.eu.hivemq.cloud',
-    port: 8883,
-    protocol: 'mqtts',
-    username: 'kenetics',
-    password: 'Charon1975$'
+    host: 'mqtt://192.168.2.8',
+    port: 1883,
+    protocol: 'mqtt',
+    username: 'admin',
+    password: 'cerberus'
 }
 
 // initialize the MQTT client
@@ -25,8 +25,9 @@ client.on('message', function (topic, message) {
     console.log('Received message:', topic, message.toString());
 });
 
-// subscribe to topic AXIS camera fence guard event
-client.subscribe('AXIS001/event/tns:axis/CameraApplicationPlatform/FenceGuard/Camera1ProfileANY');
+// subscribe to temperature event/topic
+client.subscribe('events/metrics/occupantTemperature/mean');
 
-// publish message 'Hello' to topic 'my/test/topic'
-client.publish('testtopic/1', 'Hello');
+// publish message change light pattern and number of repeats
+// client.publish('commands/object/lightringRepeat', 'Hello');
+// client.publish('commands/object/lightringPattern', 'Hello');
