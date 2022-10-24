@@ -3,7 +3,7 @@ var mqtt = require('mqtt')
 var options = {
     host: '192.168.2.8',
     port: 1883,
-    protocol: 'mqtt',
+    protocol: 'mqtts',
     username: 'admin',
     password: 'cerberus'
 }
@@ -26,7 +26,7 @@ client.on('message', function (topic, message) {
 });
 
 // subscribe to temperature event/topic
-client.subscribe('events/metrics/occupantTemperature/mean');
+// client.subscribe('events/metrics/occupantTemperature/mean');
 
 // publish message change light pattern and number of repeats
 // client.publish('commands/object/lightringRepeat', 'Hello');
