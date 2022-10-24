@@ -3,9 +3,8 @@ var mqtt = require('mqtt')
 var options = {
     host: '192.168.2.8',
     port: 1883,
-    protocol: 'mqtt',
-    protocolVersion: 1, // required for O3 sensor
-    username: 'admin',
+    protocol: 'mqtt', //dropped the mqtts
+    username: 'user',
     password: 'cerberus'
 }
 
