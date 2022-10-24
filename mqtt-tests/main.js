@@ -29,5 +29,5 @@ client.on('message', function (topic, message) {
 // subscribe to temperature event/topic
 client.subscribe('events/object/motion');
 
-// publish message to start light pattern
-client.publish('commands/object/lightringPattern', '10');
+// publish message to start light pattern - data is JSON formatted
+client.publish('commands/object/lightringPattern', JSON.stringify({"data": 10}));
