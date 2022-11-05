@@ -30,4 +30,4 @@ client.on('message', function (topic, message) {
 client.subscribe('events/object/motion');
 
 // publish message to start light pattern - data is JSON formatted
-client.publish('commands/object/lightringPattern', JSON.stringify({"data": 10}));
+client.publish('commands/object/lightringPattern', JSON.stringify({"data": 11}));
