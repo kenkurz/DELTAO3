@@ -26,8 +26,15 @@ client.on('message', function (topic, message) {
     console.log('Received message:', topic, message.toString());
 });
 
-// subscribe to temperature event/topic
+// subscribe to various events (case sensitive)
 client.subscribe('events/object/motion');
+client.subscribe('events/object/occupantTemperature');
+client.subscribe('events/object/occupantHumidity');
+client.subscribe('events/object/lightLevel');
 
-// publish message to start light pattern - data is JSON formatted
-client.publish('commands/object/lightringPattern', JSON.stringify({"data": 11}));
+// publish message to trigger various actions - data is JSON formatted
+client.publish('commands/object/lightringRepeat', JSON.stringify({"data": 5}));
+client.publish('commands/object/lightringPattern', JSON.stringify({"data": 12}));
+client.publish('commands/object/volume', JSON.stringify({"data": 100}));
+client.publish('commands/object/soundRepeat', JSON.stringify({"data": 10}));
+client.publish('commands/object/soundfile', JSON.stringify({"data": "(1) Power On.wav"}));
