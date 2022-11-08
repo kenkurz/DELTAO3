@@ -31,6 +31,8 @@ client.subscribe('events/object/motion');
 client.subscribe('events/object/occupantTemperature');
 client.subscribe('events/object/occupantHumidity');
 client.subscribe('events/object/lightLevel');
+client.subscribe('events/object/soundLevel');
+client.subscribe('events/object/acousticOccupancy');
 
 // publish message to trigger various actions - data is JSON formatted
 client.publish('commands/object/lightringRepeat', JSON.stringify({"data": 5}));
